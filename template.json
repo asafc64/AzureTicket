@@ -22,7 +22,7 @@
             "dependsOn": [],
             "properties": {
                 "templateLink": {
-                    "uri": "",
+                    "uri": "https://raw.githubusercontent.com/asafc64/AzureTicket/master/vnet_template.json",
                     "contentVersion": "1.0.0.0"
                 },
                 "mode": "Incremental"
@@ -37,7 +37,7 @@
             ],
             "properties": {
                 "templateLink": {
-                    "uri": "",
+                    "uri": "https://raw.githubusercontent.com/asafc64/AzureTicket/master/dns_template.json",
                     "contentVersion": "1.0.0.0"
                 },
                 "mode": "Incremental"
@@ -52,7 +52,7 @@
             ],
             "properties": {
                 "templateLink": {
-                    "uri": "",
+                    "uri": "https://raw.githubusercontent.com/asafc64/AzureTicket/master/vnic_nsg_template.json",
                     "contentVersion": "1.0.0.0"
                 },
                 "mode": "Incremental"
@@ -67,7 +67,7 @@
             ],
             "properties": {
                 "templateLink": {
-                    "uri": "",
+                    "uri": "https://raw.githubusercontent.com/asafc64/AzureTicket/master/flow_logs_template.json",
                     "contentVersion": "1.0.0.0"
                 },
                 "mode": "Incremental",
@@ -87,7 +87,7 @@
             ],
             "properties": {
                 "templateLink": {
-                    "uri": "",
+                    "uri": "https://raw.githubusercontent.com/asafc64/AzureTicket/master/vm_ssvm_template.json",
                     "contentVersion": "1.0.0.0"
                 },
                 "mode": "Incremental"
@@ -102,7 +102,7 @@
             ],
             "properties": {
                 "templateLink": {
-                    "uri": "",
+                    "uri": "https://raw.githubusercontent.com/asafc64/AzureTicket/master/ag_template.json",
                     "contentVersion": "1.0.0.0"
                 },
                 "mode": "Incremental"
