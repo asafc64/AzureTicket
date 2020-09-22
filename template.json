@@ -62,6 +62,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2018-02-01",
             "name": "flow_logs_template",
+            "resourceGroup": "NetworkWatcherRG",
             "dependsOn": [
                 "vnic_nsg_template"
             ],
