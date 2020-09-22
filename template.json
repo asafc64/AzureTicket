@@ -1,0 +1,113 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-02-01",
+            "name": "pid-0b87316f-9d3a-427e-88cf-399fc4100b33",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "resources": []
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-02-01",
+            "name": "vnet_template",
+            "dependsOn": [],
+            "properties": {
+                "templateLink": {
+                    "uri": "",
+                    "contentVersion": "1.0.0.0"
+                },
+                "mode": "Incremental"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-02-01",
+            "name": "dns_template",
+            "dependsOn": [
+                "vnet_template"
+            ],
+            "properties": {
+                "templateLink": {
+                    "uri": "",
+                    "contentVersion": "1.0.0.0"
+                },
+                "mode": "Incremental"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-02-01",
+            "name": "vnic_nsg_template",
+            "dependsOn": [
+                "dns_template"
+            ],
+            "properties": {
+                "templateLink": {
+                    "uri": "",
+                    "contentVersion": "1.0.0.0"
+                },
+                "mode": "Incremental"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-02-01",
+            "name": "flow_logs_template",
+            "dependsOn": [
+                "vnic_nsg_template"
+            ],
+            "properties": {
+                "templateLink": {
+                    "uri": "",
+                    "contentVersion": "1.0.0.0"
+                },
+                "mode": "Incremental",
+                "parameters": {
+                    "networkSecurityGroupId": {
+                        "value": "[resourceId('Microsoft.Network/networkSecurityGroups/','colonySidecar_security_group')]"    
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-02-01",
+            "name": "vm_ssvm_template",
+            "dependsOn": [
+                "vnic_nsg_template"
+            ],
+            "properties": {
+                "templateLink": {
+                    "uri": "",
+                    "contentVersion": "1.0.0.0"
+                },
+                "mode": "Incremental"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-02-01",
+            "name": "ag_template",
+            "dependsOn": [
+                "vnic_nsg_template"
+            ],
+            "properties": {
+                "templateLink": {
+                    "uri": "",
+                    "contentVersion": "1.0.0.0"
+                },
+                "mode": "Incremental"
+            },
+            "resourceGroup": "wwy7f30q0413z2"
+        }
+    ]
+}

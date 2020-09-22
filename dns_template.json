@@ -1,0 +1,58 @@
+{
+   "contentVersion":"1.0.0.0",
+   "resources":[
+      {
+         "properties":{
+            
+         },
+         "type":"Microsoft.Network/privateDnsZones",
+         "location":"global",
+         "tags":{
+            "colony-space-id":"2630148b-8c7e-4003-9d3f-a646c9616009",
+            "colony-tags-version":"13",
+            "colony-mgmt-resource-group":"colony-zjvmogqwzwvk9593",
+            "colony-environment":"assafPC",
+            "colony-sandbox-name":"Assaf - chronos-azure-qualiy-off",
+            "colony-space-name":"Trial",
+            "colony-blueprint-name":"chronos-azure-qualiy-off",
+            "colony-owner-email":"assaf.c@quali.com",
+            "colony-cloud-account-id":"010fb777-e6bd-4d8b-9a32-517b34817190",
+            "colony-deployment-type":"sandbox",
+            "colony-sandbox-id":"wwy7f30q0413z2",
+            "colony-environment-id":"wwy7f30q0413z2"
+         },
+         "name":"wwy7f30q0413z2.sandbox.com",
+         "apiVersion":"2018-09-01"
+      },
+      {
+         "properties":{
+            "registrationEnabled":false,
+            "virtualNetwork":{
+               "id":"[resourceId('Microsoft.Network/virtualNetworks/','wwy7f30q0413z2_vnet')]"
+            }
+         },
+         "type":"Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+         "location":"global",
+         "tags":{
+            "colony-space-id":"2630148b-8c7e-4003-9d3f-a646c9616009",
+            "colony-tags-version":"13",
+            "colony-mgmt-resource-group":"colony-zjvmogqwzwvk9593",
+            "colony-environment":"assafPC",
+            "colony-sandbox-name":"Assaf - chronos-azure-qualiy-off",
+            "colony-space-name":"Trial",
+            "colony-blueprint-name":"chronos-azure-qualiy-off",
+            "colony-owner-email":"assaf.c@quali.com",
+            "colony-cloud-account-id":"010fb777-e6bd-4d8b-9a32-517b34817190",
+            "colony-deployment-type":"sandbox",
+            "colony-sandbox-id":"wwy7f30q0413z2",
+            "colony-environment-id":"wwy7f30q0413z2"
+         },
+         "dependsOn":[
+            "[resourceId('Microsoft.Network/privateDnsZones/','wwy7f30q0413z2.sandbox.com')]"
+         ],
+         "name":"wwy7f30q0413z2.sandbox.com/vnet-link",
+         "apiVersion":"2018-09-01"
+      }
+   ],
+   "$schema":"http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json"
+}

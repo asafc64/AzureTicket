@@ -1,0 +1,35 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "networkSecurityGroupId": {
+            "type": "string"
+        },
+        "storageAccountId": {
+            "type": "string",
+            "defaultValue": "/subscriptions/24aae708-4612-497c-a91e-7ec5c657f9db/resourceGroups/colony-zjvmogqwzwvk9593/providers/Microsoft.Storage/storageAccounts/colonyzjvmogqwzwvk9593"
+        }
+    },
+    "resources": [
+       {
+         "name":"[concat('NetworkWatcher_westeurope/FlowLogOfAzureNsgTicket', uniqueString(resourceGroup().id))]",
+         "type":"Microsoft.Network/networkWatchers/flowLogs",
+         "location":"westeurope",
+         "apiVersion":"2019-09-01",
+         "properties":{
+            "targetResourceId":"[parameters('networkSecurityGroupId')]",
+            "storageId":"[parameters('storageAccountId')]",
+            "enabled":true,
+            "flowAnalyticsConfiguration":{ },
+            "retentionPolicy":{
+               "days":1,
+               "enabled":true
+            },
+            "format":{
+               "type":"JSON",
+               "version":1
+            }
+         }
+      }
+    ]
+}
